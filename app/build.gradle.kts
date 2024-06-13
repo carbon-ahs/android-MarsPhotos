@@ -17,6 +17,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -82,7 +83,11 @@ dependencies {
 
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    // Retrofit with Scalar Converter
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+// Retrofit with Kotlin serialization Converter
+
+    implementation ("com.squareup.retrofit2:converter-gson:2.2.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+// Kotlin serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }
